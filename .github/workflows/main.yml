@@ -1,4 +1,4 @@
-name: nlp2sql CI
+name: NQL CI
 
 on:
   push:
@@ -23,6 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install -e .
     - name: Lint with flake8
       run: |
         pip install flake8
