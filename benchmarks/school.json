@@ -1,0 +1,14 @@
+[
+  {
+    "question": "show students",
+    "expected_sql": "SELECT students.* FROM students LIMIT 100"
+  },
+  {
+    "question": "Show students above 80 marks",
+    "expected_sql": "SELECT students.* FROM students WHERE students.marks > 80 LIMIT 100"
+  },
+  {
+    "question": "how many students",
+    "expected_sql": "SELECT COUNT(*) FROM students LIMIT 100"
+  }
+]

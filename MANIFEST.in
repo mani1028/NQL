@@ -1,0 +1,10 @@
+include nlp2sql/ml/models/planner_v2.pt
+include nlp2sql/ml/data/*.json
+include nlp2sql/ml/data/*.jsonl
+recursive-include frontend/dist *
+recursive-include nlp2sql/enterprise *.py
+recursive-include nlp2sql/plugins *.py
+include nlp2sql.html
+include requirements.txt
+include README.md
+include docs/*.md

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nql"
+version = "1.0.0"
+description = "A lightweight offline Natural Language to SQL engine"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name="Gemini CLI" },
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy",
+    "rapidfuzz",
+    "pydantic",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
