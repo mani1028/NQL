@@ -1,7 +1,8 @@
 import json
 import os
 from datetime import datetime
-from typing import Dict, Any
+from typing import Dict, Any, Optional
+
 
 class FeedbackManager:
     """Manages user feedback and creates retraining datasets."""
@@ -9,7 +10,9 @@ class FeedbackManager:
         self.feedback_file = feedback_file
         os.makedirs(os.path.dirname(self.feedback_file), exist_ok=True)
 
-    def record_feedback(self, question: str, predicted_plan: Dict[str, Any], user_correction: Optional[Dict[str, Any]] = None, rating: int = 1):
+    def record_feedback(self, question: str, predicted_plan: Dict[str, Any],
+                        user_correction: Optional[Dict[str, Any]] = None,
+                        rating: int = 1):
         """
         Saves user feedback to a JSONL file.
         Rating: 1 for correct, 0 for incorrect.
@@ -22,11 +25,11 @@ class FeedbackManager:
             "correction": user_correction,
             "rating": rating
         }
-        
+
         with open(self.feedback_file, 'a') as f:
             f.write(json.dumps(entry) + "\n")
 
     def export_retraining_set(self) -> str:
-        """Processes corrections into a format suitable for MiniLM fine-tuning."""
+        """Processes corrections into a format for MiniLM fine-tuning."""
         # Implementation for converting JSONL to dataset.json format
         return self.feedback_file
