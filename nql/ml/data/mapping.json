@@ -1,0 +1,1 @@
+{"actions": ["AVERAGE", "CHECK", "COUNT", "FILTER", "FIND", "GET", "LIST", "MAX", "MIN", "RETRIEVE", "SEARCH", "SHOW", "SUM", "SUMMARIZE", "WHO"], "operators": ["!=", "<", "<=", "=", ">", ">=", "BETWEEN", "LIKE", "NONE"]}
